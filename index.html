@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booki</title>
+
+    <link rel="stylesheet" href="./css/home.css">
+
+</head>
+<body>
+    <header>
+        <section class="logo_nav">
+            <div class="logo_top">
+                <img src="./imgs/Booki.png">
+            </div>
+            <nav><!-- Logo and 2 Link nav-->
+                <a href="#">Accommodation</a>
+                <a href="#">Activities</a>
+            </nav> 
+        </section>
+        <section class="paragraph_container"><!-- 2 paragraph +  search box with btn + filter-->
+            <div class="paragraph">
+                <p> Find a place for your dream vacation</p>
+                <p> Downtown or in nature</p>
+            </div> 
+
+            <div class="input_containe">
+                <i class="fa fa-car"></i>
+                <input type="search" placeholder="Write city name" id="search" />
+                <button id="btn_search" type="button" >Search</button>
+            </div> <!-- Search Box-->
+
+            <div class="filters_container" id="ftsContainer">
+                <div id="filters_p">
+                    <p>Filters</p>
+                </div>
+                <div onclick="activeFilter()"  class="filters_lowcost fts" id="lowCost_div">
+                    <i onclick="activeFilter()" class="fa fa-solid fa-money-bill icon_filter" id="lowCost"></i>
+                    <p>Low cost</p>
+                </div><!-- Adicionar icone dentro dessa div, estipular tamanho para ele e fazer o icone se mover dentro dela, dando a acao do botao do mockup-->
+                <div class="filters_family fts" id="family_div">
+                    <i class="fa fa-solid fa-users icon_filter" id="family"></i>
+                    <p>Family-friendly</p>
+                </div>
+                <div class="filters_romantic fts" id="romantic_div">
+                    <i class="fa fa-solid fa-heart icon_filter" id="romantic"></i>
+                    <p>Romantic</p>
+                </div>
+                <div class="filters_petallowed fts" id="pet_div">
+                    <i class="fa fa-solid fa-dog icon_filter" id="pet"></i>
+                    <p>Pets allowed</p>
+                </div>
+            </div> <!-- Filters-->
+            <div>
+                <p>More than 500 accommodations are available in this city</p>
+            </div> <!--Paragraph-->
+        </section>     
+    </header>
+    <main>
+        <section class="gallery_available">
+            <div class="city_name">
+                <p id="outputSearch"></p>
+            </div>
+            <div class="box_container">
+                <div class="image_box">
+                    <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                    <div class="hotel_info">
+                        <p class="hotel_name">Auberge la Cannebiere</p>
+                        <p class="hotel_value"> Night starting at</p>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="image_box">
+                    <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                    <div class="hotel_info">
+                        <p class="hotel_name">Auberge la Cannebiere</p>
+                        <p class="hotel_value"> Night starting at</p>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="image_box">
+                    <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                    <div class="hotel_info">
+                        <p class="hotel_name">Auberge la Cannebiere</p>
+                        <p class="hotel_value"> Night starting at</p>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="image_box">
+                    <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                    <div class="hotel_info">
+                        <p class="hotel_name">Auberge la Cannebiere</p>
+                        <p class="hotel_value"> Night starting at</p>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                    </div>
+                </div>
+                <div class="image_box">
+                    <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                    <div class="hotel_info">
+                        <p class="hotel_name">Auberge la Cannebiere</p>
+                        <p class="hotel_value"> Night starting at</p>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="image_box">
+                    <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                    <div class="hotel_info">
+                        <p class="hotel_name">Auberge la Cannebiere</p>
+                        <p class="hotel_value"> Night starting at</p>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>              
+            </div>
+
+        </section> <!--Gallery with hotel avaliable to rent-->
+        <section class="gallery_popular">
+            <div class="most_popular">
+                <p>Most Popular</p>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="img_container">
+                <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                <div class="popular_hotel">
+                    <p class="hotel_name">Auberge la Cannebiere</p>
+                    <p class="hotel_value"> Night starting at</p>
+                    <div class="icon_star">
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="img_container">
+                <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                <div class="popular_hotel">
+                    <p class="hotel_name">Auberge la Cannebiere</p>
+                    <p class="hotel_value"> Night starting at</p>
+                    <div class="icon_star">
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="img_container">
+                <img src="./imgs/marcus_loke.jpg" alt="" class="img_city" />
+                <div class="popular_hotel">
+                    <p class="hotel_name">Auberge la Cannebiere</p>
+                    <p class="hotel_value"> Night starting at</p>
+                    <div class="icon_star">
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                    </div>
+                </div>
+            </div>
+        </section><!-- The most popular, gallery-->
+        <section></section> <!-- Gallery of activies in the city -->
+    </main>
+    <footer> <!-- Important Links-->
+
+    </footer>
+    <script src="js/index.js"></script>
+    <script src="https://kit.fontawesome.com/d09ac24993.js" crossorigin="anonymous"></script>
+</body>
+</html>
