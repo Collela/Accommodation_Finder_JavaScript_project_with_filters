@@ -39,16 +39,8 @@ function activeFilter() {
         });
     }
 }
-
-/*        
-
-    const isFamily = iconId === fIconDiv.id || iconId === fIconDiv.id && !family;
-    const isRomantic = iconId ===rIcon.id || iconId === rIconDiv.id && !romantic;
-    const isPet = iconId === pIcon.id || iconId === pIconDiv.id && !pet;
-
- */
-
 // Btn city search
+
 inputSearch.addEventListener('input', () => {
     value = inputSearch.value;
     
