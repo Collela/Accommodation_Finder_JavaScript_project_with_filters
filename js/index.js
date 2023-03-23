@@ -6,12 +6,11 @@ const fIconDiv = document.getElementById("family_div");
 const rIcon = document.getElementById("romantic");
 const rIconDiv = document.getElementById("romantic_div");
 const pIcon = document.getElementById("pet");
-const pIconDiv = document.getElementById("pe_div");
+const pIconDiv = document.getElementById("pet_div");
+const iconFilters = document.getElementById("ftsContainer");
 
-const iconFilters = document.getElementsByClassName("icon_filter");
+let low, family, romantic,pet = 0;
 
-let low, family, romantic, pet, isActive = false;
-let iconId = "";
 //Btn to search city hotel
 const inputSearch = document.getElementById('search');
 const btnSearch = document.getElementById('btn_search');
@@ -19,26 +18,53 @@ const outputSearch = document.getElementById('outputSearch');
 let value ='';
 
 //Filter event get
-function activeFilter() {
-    for(let i = 0; i < iconFilters.length; i++){
-        iconFilters[i].addEventListener("click", () => {
-            iconId = iconFilters[i].id;
-
-            const isLow = iconId === lIcon.id || iconId === lIconDiv && low === false;
-
-            const { style: iconStyle } = lIcon;
-            const { style: divStyle } = lIconDiv;
-
-                iconStyle.backgroundColor = isLow ? '#00F' : '#FFF';
-                iconStyle.color = isLow ? '#FFF' : '#00F';
-                
-                divStyle.display = isLow ? 'flex' : 'inherit';
-                divStyle.flexDirection = isLow ? 'row-reverse' : 'row';
-
-                low = true;
-        });
+const disable = () => {
+    if(event.target.id == lIcon.id && low == 1){
+        turnOn['clearLowCost'];
     }
 }
+const isActive = (event) => {
+    turnOn[event.target.id]();
+    disable();
+}
+
+const turnOn = {
+    'lowCost': () => {
+        lIcon.style.backgroundColor = '#00F';
+        lIcon.style.color = '#FFF';
+        lIconDiv.style.display = 'flex';
+        lIconDiv.style.flexDirection = 'row-reverse';
+        low = 1;
+    },
+    'clearLowCost': () => {
+        lIcon.style.backgroundColor = '#FFF';
+        lIcon.style.color = '#00F'
+        lIconDiv.style.display = 'inherit';
+        lIconDiv.style.flexDirection = 'row';
+        low = 0;
+    },
+    'family': () => {
+        fIcon.style.backgroundColor = '#00F';
+        fIcon.style.color = '#FFF';
+        fIconDiv.style.display = 'flex';
+        fIconDiv.style.flexDirection = 'row-reverse';
+    },
+    'romantic': () => {
+        rIcon.style.backgroundColor = '#00F';
+        rIcon.style.color = '#FFF';
+        rIconDiv.style.display = 'flex';
+        rIconDiv.style.flexDirection = 'row-reverse';
+    },
+    'pet': () => {
+        pIcon.style.backgroundColor = '#00F';
+        pIcon.style.color = '#FFF';
+        pIconDiv.style.display = 'flex';
+        pIconDiv.style.flexDirection = 'row-reverse';
+    }
+}
+
+iconFilters.addEventListener('click', isActive);
+
 // Btn city search
 
 inputSearch.addEventListener('input', () => {
