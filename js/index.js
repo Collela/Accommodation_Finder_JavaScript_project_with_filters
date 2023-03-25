@@ -1,3 +1,4 @@
+'use strict';
 // Filters
 const lIcon = document.getElementById("lowCost");
 const lIconDiv = document.getElementById("lowCost_div");
@@ -9,13 +10,48 @@ const pIcon = document.getElementById("pet");
 const pIconDiv = document.getElementById("pet_div");
 const iconFilters = document.getElementById("ftsContainer");
 
-let low, family, romantic,pet = 0;
 
 //Btn to search city hotel
 const inputSearch = document.getElementById('search');
 const btnSearch = document.getElementById('btn_search');
 const outputSearch = document.getElementById('outputSearch');
 let value ='';
+
+const imgs = [
+    
+    {'id':'1','name':'Auberge la Cannebiere','value':'50','url':'./imgs/marcus_loke.jpg'},
+    {'id':'2','name':'Auberge la Cannebiere','value':'50','url':'./imgs/marcus_loke.jpg'},
+    {'id':'3','name':'Auberge la Cannebiere','value':'50','url':'./imgs/marcus_loke.jpg'},
+    {'id':'4','name':'Auberge la Cannebiere','value':'50','url':'./imgs/marcus_loke.jpg'},
+    {'id':'5','name':'Auberge la Cannebiere','value':'50','url':'./imgs/marcus_loke.jpg'},
+    {'id':'6','name':'Auberge la Cannebiere','value':'50','url':'./imgs/marcus_loke.jpg'}
+    
+];
+
+const imageBox = document.querySelector('#box_container');
+
+const loadImages = (imgs, container) => {
+    imgs.forEach(element => {
+        container.innerHTML += `
+            <div class="image_box">
+                <img src="${element.url}" class="img_city" />
+            
+                <div class="hotel_info" id="hotel_info" >
+                    <p id="hotel_name">${element.name}</p>
+                    <p id="hotel_value">Night starting at ${element.value}</p>
+                    <i class="fa fa-star colored"></i>
+                    <i class="fa fa-star colored"></i>
+                    <i class="fa fa-star colored"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div> 
+            </div>
+        `
+    });
+}
+
+loadImages(imgs, imageBox);
+
 
 //Filter event get
 const disable = () => {
