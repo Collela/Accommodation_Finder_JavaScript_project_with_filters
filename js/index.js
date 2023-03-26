@@ -50,7 +50,38 @@ const loadImages = (imgs, container) => {
     });
 }
 
+const imgContainer = document.querySelector('#popular_container');
+const limit = 3; // Use only to get 3 imagens
+
+const popularImages = (imgs, popularContainer) => {
+    imgs.forEach((element, index )=> {
+
+        if(index < limit){
+            popularContainer.innerHTML += `
+            <div class="img_container" id="img_container">
+                <img src="${element.url}" alt="" class="img_city" />
+
+                <div class="popular_hotel">
+                    <p class="hotel_name">${element.name}</p>
+                    <p class="hotel_value"> Night starting at ${element.value}</p>
+                    <div class="icon_star">
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star colored"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        `
+        }
+        
+    });
+}
+
+
 loadImages(imgs, imageBox);
+popularImages(imgs, imgContainer);
 
 
 //Filter event get

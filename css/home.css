@@ -208,10 +208,6 @@ main{
 .most_popular p{
     font-size: 18px;
 }
-.img_container:nth-child(3),
-.img_container:nth-child(4){
-    margin-top: 10px;
-}
 .img_container{
     width: 97%;
     height: 25%;
@@ -220,13 +216,21 @@ main{
     flex-direction: row;
     align-items: center;
     border-radius: 10px 0 0 10px;
+
 }
-.img_container img{
+.img_container:nth-child(2),
+.img_container:nth-child(3){
+    margin-top: 10px;
+}
+
+.img_container .img_city{
     width: 50%;
     height: 90%;
     border-radius: 10px 0 0 10px;
     margin-left: 5px;
     margin-right: 5px;
+    cursor: pointer;
+
 }
 .popular_hotel{
     display: flex;
